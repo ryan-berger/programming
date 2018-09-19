@@ -58,3 +58,16 @@ func (coinList CoinList) String() CoinString {
 	}
 	return coinString
 }
+
+func (coinList CoinList) IsSame(other CoinList) bool  {
+	coinListString := coinList.String()
+	otherString := other.String()
+
+	for i := 0; i < len(coinListString); i++ {
+		if coinListString[i] != otherString[i] {
+			return false
+		}
+	}
+
+	return true
+}

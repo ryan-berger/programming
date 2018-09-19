@@ -1,7 +1,6 @@
 package coinGame
 
 import (
-	"fmt"
 	"github.com/ryan-berger/programming/a-and-d/graphs"
 )
 
@@ -62,12 +61,8 @@ func buildGraph(node *graphs.GraphNode)  {
 	}
 }
 
-func GenerateNodes() {
+func GenerateNodes() (start, end *graphs.GraphNode) {
 	rootNode := graphs.NewNode(initialString)
 	buildGraph(rootNode)
-	i := 0
-	for range nodeMap {
-		i++
-	}
-	fmt.Println("num nodes:", i)
+	return nodeMap[CoinList{T, H, H, T}.String()], rootNode
 }
